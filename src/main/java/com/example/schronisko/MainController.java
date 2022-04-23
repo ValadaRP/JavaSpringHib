@@ -1,2 +1,12 @@
-package com.example.schronisko;public class MainController {
+package com.example.schronisko;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class MainController {
+    @GetMapping("")
+    public String showHomePage(){
+        return "index";
+    }
 }

@@ -2,15 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage owners</title>
+    <title>ToDO APP</title>
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 </head>
 <body>
 <div class="container-fluid text-center">
-    <div><h2>Manage Owners</h2></div>
-    <div class="m-2">
-        <a class="h3" th:href="@{/owner/new}">Add new owner</a>
-    </div>
+    <div><h2>ToDo Application</h2></div>
+<!--    <div class="m-2">-->
+<!--        -->
+<!--    </div>-->
     <div th:if="${message}" class="alert alert-success text-center">
         [[${message}]]
     </div>
@@ -18,29 +18,34 @@
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Phone number</th>
-                <th>Addres</th>
+                <th>Topic</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Teacher</th>
+                <th>Subject</th>
                 <th>Functions</th>
             </thead>
             <tbody>
                 <th:block th:each="owner : ${listOwners}">
                     <tr>
                         <td>[[${owner.id}]]</td>
-                        <td>[[${owner.firstName}]]</td>
-                        <td>[[${owner.lastName}]]</td>
-                        <td>[[${owner.phone}]]</td>
-                        <td>[[${owner.address}]]</td>
+                        <td>[[${owner.topic}]]</td>
+                        <td>[[${owner.description}]]</td>
+                        <td>[[${owner.date}]]</td>
+                        <td>[[${owner.teacher}]]</td>
+                        <td>[[${owner.subject.subjectName}]]</td>
                         <td>
-                            <a class="h4 mr-3" th:href="@{'/owner/edit/' + ${owner.id}}">Edit</a>
-                            <a class="h4" th:href="@{'/owner/delete/' + ${owner.id}}">Delete</a>
+                            <a class="mr-1 mb-1 btn btn-info" th:href="@{'/owner/edit/' + ${owner.id}}">Edit note</a>
+                            <a class="btn mb-1 btn-danger" th:href="@{'/owner/delete/' + ${owner.id}}">Delete note</a>
+<!--                            <br>-->
                         </td>
                     </tr>
                 </th:block>
             </tbody>
         </table>
     </div>
+    <a class="mr-5 mb-1 btn btn-success float-right btn-lg" th:href="@{/owner/new}">Add note</a>
+    <a class="mr-3 btn btn-success float-right btn-lg" th:href="@{/subject/new}">Add Subject</a>
 </div>
 
 </body>

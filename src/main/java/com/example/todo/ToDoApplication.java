@@ -1,13 +1,13 @@
-package com.example.schronisko;
+package com.example.todo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AnimalShelterApplication {
+public class ToDoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AnimalShelterApplication.class, args);
+        SpringApplication.run(ToDoApplication.class, args);
     }
 
 }

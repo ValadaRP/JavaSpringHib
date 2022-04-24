@@ -1,4 +1,4 @@
-package com.example.schronisko.owner;
+package com.example.todo.Services;
 
 public class OwnerNotFoundException extends Throwable {
     public OwnerNotFoundException(String s) {
